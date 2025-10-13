@@ -19,14 +19,105 @@ Para este proyecto, se ha implementado una arquitectura de servidor único (tamb
 
 Antes de instalar los servicios, se preparó el entorno para trabajar con el repositorio de Git donde se aloja el código.
 
-### 2.1. Creación de Claves SSH para GitHub
+### 2.1. Creación de Claves SSH para GitHubFinalmente, se desplegó el código PHP de la aplicación en el directorio raíz del servidor web.
+
+Limpieza del Directorio Web: Primero, se vació el directorio /var/www/html para asegurar que no quedaran archivos residuales.
+
+
 
 Para establecer una conexión segura y autenticada con GitHub sin necesidad de introducir usuario y contraseña en cada operación, se generó un par de claves SSH.
 
 ```bash
 ssh-keygen -t ed25519 -C "anmolpreet.singh.kaur.7e8@itb.cat"
+```
+### 2.2. Verificación de la Conexión SSH
+
+Una vez añadida la clave pública a GitHub, se verificó que la conexión funcionara correctamente con el siguiente comando.
+
+```Bash
+ssh -T git@github.com
+```
+La respuesta del servidor "Hi AnmolITB! You've successfully authenticated..." confirma que la configuración es correcta.
+
+### 2.3. Clonación del Repositorio
+Con la conexión a GitHub ya establecida, se clonó el repositorio del proyecto en la máquina local para tener acceso al código fuente.
+
+```Bash
+git clone [https://github.com/AnmolITB/TASCA-Git-i-documentaci-.git](https://github.com/AnmolITB/TASCA-Git-i-documentaci-.git)
+```
+Este comando descarga el contenido del repositorio en un nuevo directorio llamado TASCA-Git-i-documentaci-.
 
 ---
+
+## 3. Instalación de Servicios (Stack LAMP)
+Se instalaron todos los paquetes de software necesarios (Apache, MariaDB y PHP) con un único comando para montar el stack LAMP (Linux, Apache, MariaDB, PHP).
+```Bash
+sudo apt -y install apache2 php php-mysql libapache2-mod-php mariadb-server
+```
+Este comando descarga e instala el servidor web Apache, PHP junto a sus módulos de integración con Apache y MySQL, y el servidor de bases de datos MariaDB.
+### 3.1. Habilitación de los Servicios
+Una vez instalados, se activaron y arrancaron los servicios de Apache y MariaDB para asegurar que se inicien automáticamente con el sistema.
+
+```Bash
+sudo systemctl enable --now apache2 mariadb
+```
+El flag --now no solo los habilita para el arranque, sino que también los inicia en el mismo momento.
+
+---
+
+# 4. Verificación del Servidor Web y PHP
+Para confirmar que el servidor web y el intérprete de PHP funcionaban correctamente, se creó un archivo de prueba en el directorio raíz del servidor web (/var/www/html/).
+```Bash
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php > /dev/null
+```
+Este comando crea un archivo llamado info.php que ejecuta la función phpinfo(), la cual muestra toda la información de la configuración de PHP. Al acceder a la dirección http://<IP_DEL_SERVIDOR>/info.php desde un navegador, se pudo verificar que PHP v8.3.6 estaba activo y correctamente integrado con Apache.
+
+---
+
+# 5. Configuración de la Base de Datos
+El siguiente paso fue preparar la base de datos que utilizará la aplicación.
+
+## 5.1. Acceso a MariaDB
+Se accedió a la consola de MariaDB como usuario root para poder ejecutar comandos de administración.
+
+```Bash
+sudo mysql -u root -p
+```
+## 5.2. Creación de la Base de Datos y la Tabla
+Dentro de la consola de MariaDB, se crearon la base de datos crud_db y la tabla users necesaria para la aplicación.
+
+```SQL
+-- Creación de la base de datos
+CREATE DATABASE crud_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+```SQL
+-- Selección de la base de datos
+USE crud_db;
+```
+```SQL
+-- Creación de la tabla de usuarios
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+```
+---
+
+# 6. Despliegue de la Aplicación Inicial
+Finalmente, se desplegó el código PHP de la aplicación en el directorio raíz del servidor web.
+
+* **Limpieza del Directorio Web:** Primero, se vació el directorio /var/www/html para asegurar que no quedaran archivos residuales.
+```Bash
+sudo rm -rf "/var/www/html"/*
+```
+* **Copia de Ficheros:** Se copiaron los archivos de la aplicación (index.php, db.php, add.php, edit.php, delete.php) desde el directorio del repositorio clonado (~/TASCA-Git-i-documentaci-/Código Completo con errores) al directorio /var/www/html/. Aunque el comando de copia no aparece explícitamente, los pasos posteriores de edición y el contexto lo confirman.
+* **Configuración:** Se editó el fichero db.php para ajustar los parámetros de conexión a la base de datos (servername, username, password, dbname).
+Con estos pasos, la versión inicial de la aplicación, que contiene errores, quedó desplegada y lista para la siguiente fase del proyecto: la identificación y corrección de bugs.
+
+
+
+
 
 
 
