@@ -1,4 +1,30 @@
+# Documentación de Instalación y Despliegue
 
+Este documento detalla el proceso de instalación y configuración del entorno necesario para el despliegue de la aplicación web del proyecto. Se describen los pasos para configurar el servidor, la base de datos y desplegar la versión inicial del código con errores.
+
+---
+
+## 1. Arquitectura del Sistema
+
+Para este proyecto, se ha implementado una arquitectura de servidor único (también conocida como "all-in-one"). Todos los servicios necesarios para el funcionamiento de la aplicación residen en una misma máquina virtual.
+
+* **Sistema Operativo:** Ubuntu 24.04
+* **Servidor Web:** Apache2
+* **Base de Datos:** MariaDB Server
+* **Lenguaje de Programación:** PHP 8.3.6 con los módulos necesarios para Apache y MySQL (`php`, `php-mysql`, `libapache2-mod-php`)
+
+---
+
+## 2. Preparación del Entorno y Conexión a GitHub
+
+Antes de instalar los servicios, se preparó el entorno para trabajar con el repositorio de Git donde se aloja el código.
+
+### 2.1. Creación de Claves SSH para GitHub
+
+Para establecer una conexión segura y autenticada con GitHub sin necesidad de introducir usuario y contraseña en cada operación, se generó un par de claves SSH.
+
+```bash
+ssh-keygen -t ed25519 -C "anmolpreet.singh.kaur.7e8@itb.cat"
 
 
 
