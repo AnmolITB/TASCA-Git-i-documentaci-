@@ -12,7 +12,7 @@ Es crea una clau SSH per connectar-se amb GitHub sense contrasenya.
 ```bash
 ssh-keygen -t ed25519 -C "anmolpreet.singh.kaur.7e8@itb.cat"
 ```
-![Generació clau SSH](img/1_sshkeygen.png)
+![Generació clau SSH](Images/ndn/img1.png)
 
 ---
 
@@ -21,7 +21,7 @@ Es comprova la connexió SSH amb GitHub per assegurar la identificació.
 ```bash
 ssh -T git@github.com
 ```
-![Connexió GitHub SSH](img/2_ssh_github.png)
+![Connexió GitHub SSH](Images/img2.png)
 
 ---
 
@@ -30,7 +30,7 @@ Es clona el repositori del projecte al directori local.
 ```bash
 git clone https://github.com/AnmolITB/TASCA-Git-i-documentaci.git
 ```
-![Clonació del repositori](img/3_git_clone.png)
+![Clonació del repositori](Images/img3.png)
 
 ---
 
