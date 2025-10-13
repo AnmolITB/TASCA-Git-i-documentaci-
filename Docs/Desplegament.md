@@ -12,7 +12,7 @@ Es crea una clau SSH per connectar-se amb GitHub sense contrasenya.
 ```bash
 ssh-keygen -t ed25519 -C "anmolpreet.singh.kaur.7e8@itb.cat"
 ```
-![Generació clau SSH](Images/img1.png)
+![Generació clau SSH](../Images/img1.png)
 
 ---
 
