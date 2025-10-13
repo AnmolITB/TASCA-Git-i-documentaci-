@@ -39,7 +39,7 @@ Es configuren Apache2, PHP i MariaDB.
 ```bash
 sudo apt -y install apache2 php php-mysql libapache2-mod-php mariadb-server
 ```
-![Instal·lació LAMP](img/4_lamp_install.png)
+![Instal·lació LAMP](Images/img4.png)
 
 ---
 
@@ -48,7 +48,7 @@ S’inicien automàticament Apache2 i MariaDB.
 ```bash
 sudo systemctl enable --now apache2 mariadb
 ```
-![Activació serveis](img/5_enable_services.png)
+![Activació serveis](Images/img5.png)
 
 ---
 
@@ -57,7 +57,7 @@ Es buida `/var/www/html` per preparar el desplegament.
 ```bash
 sudo rm -rf /var/www/html/*
 ```
-![Neteja directori](img/6_rm_html.png)
+
 
 ---
 
@@ -66,7 +66,7 @@ Es crea un fitxer `info.php` i es comprova la seva execució al navegador.
 ```bash
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php > /dev/null
 ```
-![Prova phpinfo](img/7_phpinfo.png)
+![Prova phpinfo](Images/img7.png)
 
 ---
 
@@ -81,7 +81,7 @@ CREATE TABLE users (
   email VARCHAR(100) NOT NULL
 );
 ```
-![Creació base de dades](img/8_db_creation.png)
+![Creació base de dades](Images/img8.png)
 
 ---
 
@@ -103,7 +103,7 @@ nano ~/crud/add.php
 nano ~/crud/edit.php
 nano ~/crud/delete.php
 ```
-![Creació fitxers CRUD](img/10_create_files.png)
+![Creació fitxers CRUD](Images/img10.png)
 
 ---
 
@@ -129,7 +129,7 @@ if ($conn->connect_error) {
 
 ### 12️⃣ Execució amb errors
 Es prova el CRUD inicialment i es detecten fallades.
-![Codi erroni](img/12_codi_erroni.png)
+![Codi erroni](Images/img12.png)
 
 ---
 
@@ -141,7 +141,7 @@ Es solucionen els errors i el CRUD ja funciona correctament.
 
 ### 14️⃣ Afegir un usuari nou
 Es comprova el formulari afegint un registre nou.
-![Afegir usuari](img/14_afegir_usuari.png)
+![Afegir usuari](Images/img14.png)
 
 ---
 
@@ -153,7 +153,7 @@ Es mostra la taula amb les dades introduïdes.
 
 ### 16️⃣ CRUD complet
 El sistema permet afegir, editar i eliminar usuaris des de la web.
-![CRUD complet](img/16_crud_complet.png)
+![CRUD complet](Images/img16.png)
 
 ---
 
