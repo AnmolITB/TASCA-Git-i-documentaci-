@@ -26,7 +26,7 @@ Para establecer una conexión segura y autenticada con GitHub sin necesidad de i
 ```bash
 ssh-keygen -t ed25519 -C "anmolpreet.singh.kaur.7e8@itb.cat"
 
-
+---
 
 
 
