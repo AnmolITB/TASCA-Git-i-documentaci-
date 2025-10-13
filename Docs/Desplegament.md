@@ -21,7 +21,7 @@ Es comprova la connexió SSH amb GitHub per assegurar la identificació.
 ```bash
 ssh -T git@github.com
 ```
-![Connexió GitHub SSH](Images/img2.png)
+![Connexió GitHub SSH](../Images/img2.png)
 
 ---
 
@@ -30,7 +30,7 @@ Es clona el repositori del projecte al directori local.
 ```bash
 git clone https://github.com/AnmolITB/TASCA-Git-i-documentaci.git
 ```
-![Clonació del repositori](Images/img3.png)
+![Clonació del repositori](../Images/img3.png)
 
 ---
 
@@ -39,7 +39,7 @@ Es configuren Apache2, PHP i MariaDB.
 ```bash
 sudo apt -y install apache2 php php-mysql libapache2-mod-php mariadb-server
 ```
-![Instal·lació LAMP](Images/img4.png)
+![Instal·lació LAMP](../Images/img4.png)
 
 ---
 
@@ -48,7 +48,7 @@ S’inicien automàticament Apache2 i MariaDB.
 ```bash
 sudo systemctl enable --now apache2 mariadb
 ```
-![Activació serveis](Images/img5.png)
+![Activació serveis](../Images/img5.png)
 
 ---
 
@@ -66,7 +66,7 @@ Es crea un fitxer `info.php` i es comprova la seva execució al navegador.
 ```bash
 echo "<?php phpinfo(); ?>" | sudo tee /var/www/html/info.php > /dev/null
 ```
-![Prova phpinfo](Images/img7.png)
+![Prova phpinfo](../Images/img7.png)
 
 ---
 
@@ -81,7 +81,7 @@ CREATE TABLE users (
   email VARCHAR(100) NOT NULL
 );
 ```
-![Creació base de dades](Images/img8.png)
+![Creació base de dades](../Images/img8.png)
 
 ---
 
@@ -103,7 +103,7 @@ nano ~/crud/add.php
 nano ~/crud/edit.php
 nano ~/crud/delete.php
 ```
-![Creació fitxers CRUD](Images/img10.png)
+![Creació fitxers CRUD](../Images/img10.png)
 
 ---
 
@@ -129,7 +129,7 @@ if ($conn->connect_error) {
 
 ### 12️⃣ Execució amb errors
 Es prova el CRUD inicialment i es detecten fallades.
-![Codi erroni](Images/img12.png)
+![Codi erroni](../Images/img12.png)
 
 ---
 
@@ -141,7 +141,7 @@ Es solucionen els errors i el CRUD ja funciona correctament.
 
 ### 14️⃣ Afegir un usuari nou
 Es comprova el formulari afegint un registre nou.
-![Afegir usuari](Images/img14.png)
+![Afegir usuari](../Images/img14.png)
 
 ---
 
@@ -153,7 +153,7 @@ Es mostra la taula amb les dades introduïdes.
 
 ### 16️⃣ CRUD complet
 El sistema permet afegir, editar i eliminar usuaris des de la web.
-![CRUD complet](Images/img16.png)
+![CRUD complet](../Images/img16.png)
 
 ---
 
